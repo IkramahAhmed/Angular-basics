@@ -1,0 +1,97 @@
+<!-- Interpolation  kise bhe method ,function ko agar html walay page kay andar dikhana hoto bracket menm show krwatat hen-->
+<h1>hello boi{{ title }}</h1>
+
+<button (click)="getData('hello')">Call function</button>
+<input
+  type="text"
+  #box
+  (keyup)="getData(box.value)"
+  placeholder="event keyup"
+/>
+
+<!-- custom pipe -->
+<!-- <div *ngFor="let user of users">
+    <p>ID: {{ user?.id }}</p>
+    <p>Name: {{ user?.name }}</p>
+    <p>Salary: {{ user?.salary }}</p>
+    <p>Date of birth: {{ user?.dob }}</p>
+    <p>Age: {{ user?.dob | age }}</p>
+    </div> -->
+
+<!-- Services -->
+<!-- <div *ngFor="let user of users">
+  <p>ID: {{ user?.id }}</p>
+  <p>Name: {{ user?.name }}</p>
+  <p>Salary: {{ user?.salary }}</p>
+  <p>Date of birth: {{ user?.dob }}</p>
+  <p>Age: {{ user?.dob | age }}</p>
+</div> -->
+
+<!-- ?hhtp service another inb gpt -->
+<!-- <div *ngIf="users.length">
+  <h2>List of Users</h2>
+  <ul>
+    <li *ngFor="let user of users">{{ user.name }} ({{ user.email }})</li>
+  </ul>
+</div>
+<div *ngIf="!users.length">Loading users...</div> -->
+
+<!-- Binding component   render here -->
+<app-binding></app-binding>
+
+<!-- Routing Basics -->
+<nav class="d-flex">
+  <a routerLink="/">User Management</a>
+
+  <ul>
+    <li>
+      <a routerLink="/users">Users</a>
+    </li>
+    <li>
+      <a routerLink="/about">About</a>
+    </li>
+    <li>
+      <a routerLink="/contact">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- This is where the routed component will be displayed -->
+<router-outlet></router-outlet>
+
+<!-- Angular forms tutorial # Pre filled Form | template driven form | TDF
+ -->
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+  <input
+    type="text"
+    name="email"
+    [(ngModel)]="userData.name"
+    placeholder="Email"
+  /><br />
+  <input
+    type="text"
+    name="address"
+    [(ngModel)]="userData.address"
+    placeholder="Address"
+  /><br />
+  <input
+    type="text"
+    name="phone"
+    [(ngModel)]="userData.phone"
+    placeholder="Phone"
+  /><br />
+  <button type="submit">Submit</button>
+</form>
+
+<!--Todo list  -->
+<h1>{{title}}</h1>
+<input #task type="text" placeholder="Enter a task" />
+<button (click)="addTask(task.value)">Add task</button> 
+
+<ul *ngFor="let item of list">
+  <li>{{item.name}} <button (click)="deleteTask(item.id)"></button></li>
+</ul>
+
+
+<!-- Basic Tyscript -->
+ 

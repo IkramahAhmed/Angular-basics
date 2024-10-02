@@ -1,0 +1,20 @@
+<p>binding works!</p>
+<!-- INterploationng
+ -->
+ <h1>Interpolation</h1>
+ <button disabled={{btnStatus}}>Click</button>
+<!-- Property Binding  --> 
+
+<!-- Property Binding can be used with any DOM property (like setting the value of an input field, the disabled state of a button, the URL of an image, etc.).
+Interpolation is typically used for binding to text content within HTML tags.
+Capabilities:
+
+Property Binding can handle complex objects and non-string properties.
+Interpolation converts the data to a string before inserting it into the HTML. -->
+<h1>Interpolation</h1>
+<h1>Property</h1>
+
+<button [disabled]="btnStatus">Click</button>
+
+<!-- Event Binding -->
+<button (click)="changeTitle()">Change Title</button>
