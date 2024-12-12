@@ -15,7 +15,10 @@ import { UsersComponent } from './users/users.component';
 import { AddressComponent } from './address/address.component';
 import { CompanyComponent } from './company/company.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SummaryPipe } from './pipes/summary.pipe';
+import { InputFormatDirective } from './input-format.directive';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 // Routes
 const routes: Routes = [
@@ -38,6 +41,9 @@ const routes: Routes = [
     UsersComponent,
     AddressComponent,
     CompanyComponent,
+    SummaryPipe,
+    InputFormatDirective,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +51,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(routes), // Import the routes
     FormsModule,
+    ReactiveFormsModule,
 
   ],
   //All service in angular must be import here in provider

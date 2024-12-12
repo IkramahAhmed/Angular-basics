@@ -61,7 +61,7 @@
 
 <!-- Angular forms tutorial # Pre filled Form | template driven form | TDF
  -->
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+<!-- <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
   <input
     type="text"
     name="email"
@@ -81,17 +81,122 @@
     placeholder="Phone"
   /><br />
   <button type="submit">Submit</button>
-</form>
+</form> -->
 
 <!--Todo list  -->
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 <input #task type="text" placeholder="Enter a task" />
-<button (click)="addTask(task.value)">Add task</button> 
+<button (click)="addTask(task.value)">Add task</button>
 
 <ul *ngFor="let item of list">
-  <li>{{item.name}} <button (click)="deleteTask(item.id)"></button></li>
+  <li>{{ item.name }} <button (click)="deleteTask(item.id)"></button></li>
 </ul>
 
-
 <!-- Basic Tyscript -->
+<!-- Udemy course -->
+ <div class="col-12 "></div>
+<button class="btn btn-primary" [ngClass]="">Bootstrap Button</button>
+
+<!-- Clas Binding -->
+ <h1>Class Binding</h1>
+<p class="bg-pink" [class.active] = "isActive">Today we are discuss the class binding tthis is dynamicaic class</p>
+
+<button (click)="classBinding()">change the upper class text</button>
+
+<!-- Style Binding -->
+<h1>Style Binding</h1>
+<p class="bg-pink" [style.background] = "isActive2 ? 'blue' : 'white' ">Today we are discuss the class binding tthis is dynamicaic class</p>
+
+<button (click)="styleBinding()">change the upper class text</button>
+
+<!-- Ng Class -->
+<h1>NgClass Binding Example</h1>
+<button [ngClass]="{ 'btn-secondary2': isActive3, 'btn-secondary1': !isActive3 }" (click)="toggleButtonClass()">
+  Click Me
+</button>
+
+<p class="bg-pink" [style.background] = "isActive2 ? 'blue' : 'white' ">Today we are discuss the class binding tthis is dynamicaic class</p>
+
+
+
+<!-- Event filter -->
+<h1>Event fIlter</h1>
+<input type="text" (keyup.enter)="onKeyUp()" >
+
+
+<!-- Templtate Variable -->
+<h1>Templtate Variable</h1>
+<input type="text" #email (keyup.enter) = "onKeyUp2(email.value)"/>
+
+
+
+<h2>Custom Pipe</h2>
+<p>{{ text | summary:100 }}</p>
+
+
+<h1>Assignment</h1>
+<button [ngClass]="{ 'btn-secondary2': isActive3, 'btn-secondary1': !isActive3 }" (click)="toggleButtonClass()">
+  Click Me
+</button>
+
+<!--  -->
+<h2>Input Conept data send from parent to child</h2>
+<app-contact [message]="message"></app-contact>
+
+<!-- ngIf -->
+ <div  *ngIf="courses.length > 0 nodata">
+ <div *ngFor="let course of courses">
+  {{course.name}}
+ </div>
+
+ <ng-template #nodata>
+  no courses yet
+ </ng-template>
+</div>
+
+<!-- ngFor cahnge detection -->
+<div *ngFor="let course of courses" (click)="onAdd()">
+  {{course.name}}
+  <button (click)="onRemove(course)">Remove</button>
+ </div>
+
+ <!-- ngFor track by Id -->
+<!-- <h2>ngFor track by Id</h2>
+
+<button>Load</button>
+<div *ngFor="let course of courses">
+  {{course.name}}
+ </div> -->
+
+ <!--creating custum directive  -->
+ <h3 class="mt-3">creating custum directive </h3>
+ <input type="text" [appInputFormat]="'uppercase'">
+
+ <!-- Tempktae driven form
+  <h3> Template driven form</h3>
+     -->
+
+  <!-- <form>
+    <div class="form-group"> -->
+      <!-- The label text "First Name" is associated with the input field having id="firstName".
+Clicking on the label will focus the input field. -->
+      <!-- <label for="firstName">First Name</label>
+      <input id="firstName" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="comments">Comments</label>
+      <textarea cols="30" rows="4" id="comments" type="text" class="form-control">
+    </div>
+
+    <button class="btn btn-primary"Submit></button>
+  </form> -->
+
+   <!-- Reactive Form -->
  
+  
+    <app-contact></app-contact> 
+
+
+    
+    <app-new-course-form></app-new-course-form> 

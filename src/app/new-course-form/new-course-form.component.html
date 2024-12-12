@@ -1,0 +1,24 @@
+<h3>Form Array</h3>
+
+<form [formGroup]="form">
+    <input
+    type="text"
+    class="form-control"
+    placeholder="add topic please"
+    (keyup.enter)="addTopic(topic.value)" #topic >
+
+    <ul class="list-group mt-3">
+        <li
+          class="list-group-item"
+          *ngFor="let topic of topics.controls; let i = index"
+        >
+          {{ topic.value }}
+          <button
+            type="button"
+            class="btn btn-danger btn-sm float-end"
+            (click)="removeTopic(i)"    >      
+              Remove
+          </button>
+        </li>
+      </ul>
+</form>
