@@ -149,4 +149,10 @@ export class AppComponent implements OnInit {
     let index = this.courses.indexOf(course);
     this.courses.splice(index, 1);
   }
+
+  // Passing Event Data
+  handleClick(event:MouseEvent){
+    console.log('Event type',event.type);
+    console.log('Button Text:', (event.target as HTMLButtonElement).innerText);
+  }
 }
