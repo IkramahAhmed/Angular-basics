@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-course-form',
@@ -11,6 +11,12 @@ export class NewCourseFormComponent {
   constructor(private fb: FormBuilder) {
     // Use FormBuilder to create the form
     this.form = this.fb.group({
+      name:[undefined,Validators.required],
+      //this is the right way to use formBuilder 
+      contact:fb.group({
+        email:[],
+        phone: []
+      }),
       topics: this.fb.array([]), // Initialize a FormArray called "topics" inside the form
     });
   }

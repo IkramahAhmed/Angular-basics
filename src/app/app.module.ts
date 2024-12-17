@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { InputFormatDirective } from './input-format.directive';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 // Routes
 const routes: Routes = [
@@ -43,7 +44,8 @@ const routes: Routes = [
     CompanyComponent,
     SummaryPipe,
     InputFormatDirective,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
