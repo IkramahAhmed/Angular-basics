@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-
+  students = [
+    { id: 1, name: 'John' },
+    { id: 2, name: 'Jane' },
+    { id: 3, name: 'Alice' },
+  ];
 }

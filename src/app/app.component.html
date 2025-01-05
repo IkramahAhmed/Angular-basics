@@ -41,23 +41,39 @@
 
 <!-- Routing Basics -->
 <nav class="d-flex">
+  <!-- we cant use href because its redonloaded the all code again when we click this or so we wanna avoid this .when we going to the large application it will take lots of time and redonwload the code for every click  if we use the routerlink and clcik the for instance followers page its only targeted page downloaded not all pages so thats the beneifut of angual -->
   <a routerLink="/">User Management</a>
 
   <ul>
     <li>
-      <a routerLink="/users">Users</a>
-    </li>
+      <!-- <a [routerLink]="['/followers',followers.id]">Followers</a> -->
+
+    </li> 
     <li>
-      <a routerLink="/about">About</a>
+      <a routerLink="/posts">posts</a>
     </li>
     <li>
       <a routerLink="/contact">Contact</a>
     </li>
+    <li>
+      <a routerLink="/profile">Profile</a>
+    </li>
+    <li>
+      <a routerLink="/register">Register</a>
+    </li>
+    <!-- Dynamic Routing -->
+    <li>
+  
+  
+    </li>
+    <!-- <li>
+      <a routerLink="/profile/50">Profile</a>
+    </li> -->
   </ul>
 </nav>
 
-<!-- This is where the routed component will be displayed -->
-<router-outlet></router-outlet>
+
+<p>______________________________________________</p>
 
 <!-- Angular forms tutorial # Pre filled Form | template driven form | TDF
  -->
@@ -198,7 +214,7 @@ Clicking on the label will focus the input field. -->
      <!-- Reactive Form -->
  
   
-    <app-contact></app-contact> 
+    <!-- <app-contact></app-contact> 
 
 
     
@@ -206,3 +222,8 @@ Clicking on the label will focus the input field. -->
 
 
     <app-change-password></app-change-password>
+
+    <app-student-list></app-student-list> -->
+
+    <!-- This is where the routed component will be displayed -->
+<router-outlet></router-outlet>

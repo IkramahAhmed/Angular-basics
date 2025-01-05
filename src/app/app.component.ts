@@ -11,9 +11,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'blog';
   loading: boolean = false;
+  routingData = [
+    { id: 1, name: 'John Doe' },
+    { id: 2, name: 'Jane Smith' },
+    { id: 3, name: 'Alice Johnson' },
+  ];
   form = new FormGroup({
-    username:new FormControl(undefined,Validators.required),
-    password:new FormControl(undefined,Validators.required)
+    username: new FormControl(undefined, Validators.required),
+    password: new FormControl(undefined, Validators.required),
   });
   onSubmit() {
     if (this.form.valid) {
@@ -22,7 +27,7 @@ export class AppComponent implements OnInit {
       console.error('Form is invalid');
     }
   }
-  
+
   list: { id: number; name: string }[] = [];
   getData(val: string) {
     console.warn('function called');
@@ -145,14 +150,14 @@ export class AppComponent implements OnInit {
   onAdd() {
     this.courses.push({ name: 'courses' });
   }
-  onRemove(course:any) {
+  onRemove(course: any) {
     let index = this.courses.indexOf(course);
     this.courses.splice(index, 1);
   }
 
   // Passing Event Data
-  handleClick(event:MouseEvent){
-    console.log('Event type',event.type);
+  handleClick(event: MouseEvent) {
+    console.log('Event type', event.type);
     console.log('Button Text:', (event.target as HTMLButtonElement).innerText);
   }
 }

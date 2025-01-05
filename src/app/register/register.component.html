@@ -1,1 +1,7 @@
 <p>register works!</p>
+<h2>Student List</h2>
+<ul>
+  <li *ngFor="let student of students">
+    <a [routerLink]="['/register', student.id]">{{ student.name }}</a>
+  </li>
+</ul>
